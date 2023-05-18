@@ -1,9 +1,4 @@
-PAINT_CAN_COST = 25
-PAINT_SQ_FEET = 350
-
-DOOR_SQ_FEET = 14.5
-WINDOW_SQ_FEET = 9
-
+import math
 
 def get_positive_float(prompt):
     while True:
@@ -18,6 +13,9 @@ def get_positive_float(prompt):
 
 
 def roomDimensions():
+    DOOR_SQ_FEET = 14.5
+    WINDOW_SQ_FEET = 9
+
     room_length_input = get_positive_float("Please enter the room length: ")
     room_width_input = get_positive_float("Please enter the room width: ")
     room_height_input = get_positive_float("Please enter the room height: ")
@@ -41,10 +39,29 @@ def roomDimensions():
     return room_dimensions, ceiling_dimensions
 
 
+
+
+import math
+
 def roomCost(room_dimensions, ceiling_dimensions):
+    PAINT_CAN_COST = 25
+    PAINT_SQ_FEET = 350
+    BASE_LABOR_COST = 100
+    LABOR_DIVIDER = 500
+
     total_dimensions = room_dimensions + ceiling_dimensions
-    total_cost = total_dimensions / PAINT_SQ_FEET * PAINT_CAN_COST
-    print(f"Total cost to paint is ${total_cost}")
+    cans_needed = math.ceil(total_dimensions / PAINT_SQ_FEET)
+    paint_cost = cans_needed * PAINT_CAN_COST
+
+    labor_cost = math.ceil(total_dimensions / LABOR_DIVIDER) * BASE_LABOR_COST
+
+    total_cost = paint_cost + labor_cost
+
+    print(f"The user's total square feet is {total_dimensions}, labor cost is {labor_cost}, and the paint cost is {paint_cost}. Total cost is {total_cost}.")
+
+
+
+
 
 
 def main():
