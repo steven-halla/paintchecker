@@ -4,7 +4,7 @@
 
 ################################################################
 # Project: pain project
-# File: main.py
+# File: paint.py
 # Description: This program asks for user input for their home dimensions.
 # Author: Steven Halla
 # Version: 1.0
