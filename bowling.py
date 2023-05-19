@@ -38,7 +38,7 @@ def validateInput(prompt):
 # Description:  user enters 3 scrores
 # return:       score_one, score_two, score_three
 # Author: Steven halla
-################################################################
+###########################################25#####################
 def getUserScore():
     score_one = validateInput("Enter score 1: "
                                "Please enter a number between 0-300: ")
@@ -57,8 +57,10 @@ def getUserScore():
 # Author: Steven halla
 ################################################################
 def getScoreAverage(score_one, score_two, score_three):
-    score_average = math.ceil((score_one + score_two + score_three) / 3)
+    NUMBER_OF_GAMES = 3
+    score_average = math.ceil((score_one + score_two + score_three) / NUMBER_OF_GAMES)
     print(f"Your average score is: {score_average}")
+    return score_average
 
 ################################################################
 # Function: main
